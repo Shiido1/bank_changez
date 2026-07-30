@@ -17,9 +17,9 @@ class AboutScreen extends StatelessWidget {
         backgroundColor: AppColors.greyWell,
         leading: IconButton(
           onPressed: () {},
-          icon: Icon(Icons.arrow_back, color: AppColors.white, size: 24.0),
+          icon: const Icon(Icons.arrow_back, color: AppColors.white, size: 24.0),
         ),
-        title: Text(
+        title: const Text(
           'About the Developer',
           textAlign: TextAlign.center,
           style: TextStyle(
@@ -32,12 +32,12 @@ class AboutScreen extends StatelessWidget {
         ),
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(horizontal: 16.22, vertical: 48),
+        padding: const EdgeInsets.symmetric(horizontal: 16.22, vertical: 48),
         child: Column(
           children: [
             Container(
               width: double.infinity,
-              padding: EdgeInsets.all(17.22),
+              padding: const EdgeInsets.all(17.22),
               decoration: BoxDecoration(
                 color: AppColors.greyWell,
                 borderRadius: BorderRadius.circular(16),
@@ -45,22 +45,22 @@ class AboutScreen extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   Container(
-                    padding: EdgeInsets.all(22),
+                    padding: const EdgeInsets.all(22),
                     decoration: BoxDecoration(
                       border: Border.all(color: AppColors.purple, width: .8),
                       borderRadius: BorderRadius.circular(10.2),
                       color: AppColors.purple.withOpacity(.12),
                     ),
-                    child: Icon(
+                    child: const Icon(
                       Icons.shield_outlined,
-                      color: const Color(0xFF6A00FF),
+                      color: Color(0xFF6A00FF),
                       size: 50,
                     ),
                   ),
-                  SizedBox(height: 20),
-                  Text(
+                  const SizedBox(height: 20),
+                  const Text(
                     "Geosoft Solutions Limited",
                     style: TextStyle(
                       color: AppColors.white,
@@ -69,21 +69,21 @@ class AboutScreen extends StatelessWidget {
                       fontSize: 20,
                     ),
                   ),
-                  SizedBox(height: 5.10),
-                  Text(
+                  const SizedBox(height: 5.10),
+                  const Text(
                     "RC: 0000000 · CAC Registered, Nigeria",
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      color: const Color.fromARGB(255, 132, 153, 175),
+                      color: Color.fromARGB(255, 132, 153, 175),
                       fontWeight: FontWeight.w400,
                       letterSpacing: -0.1,
                       fontSize: 16.20,
                     ),
                   ),
-                  SizedBox(height: 15.0),
+                  const SizedBox(height: 15.0),
                   Container(
-                    margin: EdgeInsets.symmetric(horizontal: 16),
-                    padding: EdgeInsets.symmetric(vertical: 4.2),
+                    margin: const EdgeInsets.symmetric(horizontal: 16),
+                    padding: const EdgeInsets.symmetric(vertical: 4.2),
                     decoration: BoxDecoration(
                       border: Border.all(color: AppColors.green, width: .2),
                       borderRadius: BorderRadius.circular(22),
@@ -94,7 +94,7 @@ class AboutScreen extends StatelessWidget {
                         37,
                       ).withOpacity(.2),
                     ),
-                    child: Row(
+                    child: const Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -116,24 +116,24 @@ class AboutScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                 ],
               ),
             ),
 
-            SizedBox(height: 20),
-            ContactInfoCard(),
-            SizedBox(height: 20),
-            AppInfoCard(),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
+            const ContactInfoCard(),
+            const SizedBox(height: 20),
+            const AppInfoCard(),
+            const SizedBox(height: 20),
             Container(
-              padding: EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
                 color: AppColors.greyWell,
                 borderRadius: BorderRadius.circular(20),
                 border: Border.all(color: Colors.white.withOpacity(.08)),
               ),
-              child: Row(
+              child: const Row(
                 children: [
                   Icon(Icons.open_in_new, color: Colors.deepPurple, size: 18),
                   SizedBox(width: 10.6),
@@ -149,8 +149,8 @@ class AboutScreen extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 30),
-            Text(
+            const SizedBox(height: 30),
+            const Text(
               "Bank Chargez! is not affiliated with any Nigerian bank or the CBN. All dispute generation is for consumer advocacy purposes only.",
               textAlign: TextAlign.center,
               style: TextStyle(

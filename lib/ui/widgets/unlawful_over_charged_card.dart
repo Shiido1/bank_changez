@@ -28,11 +28,11 @@ class UnlawfulOverchargeCard extends StatelessWidget {
         gradient: LinearGradient(
           colors: [
             AppColors.red.withOpacity(.1),
-            Color(0xff1D1E2B),
-            Color(0xff1D1E2B),
-            Color(0xff1D1E2B),
-            Color(0xff1D1E2B),
-            Color(0xff172632),
+            const Color(0xff1D1E2B),
+            const Color(0xff1D1E2B),
+            const Color(0xff1D1E2B),
+            const Color(0xff1D1E2B),
+            const Color(0xff172632),
           ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
@@ -48,8 +48,8 @@ class UnlawfulOverchargeCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 /// Header
-                Row(
-                  children: const [
+                const Row(
+                  children: [
                     Icon(
                       Icons.warning_amber_rounded,
                       color: Color(0xffF44336),

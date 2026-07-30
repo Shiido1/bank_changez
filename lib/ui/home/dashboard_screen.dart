@@ -34,14 +34,70 @@ class _DashboardScreenState extends State<DashboardScreen> {
     bool? granted = await telephony.requestPhoneAndSmsPermissions;
 
     if (granted == true) {
-      final sms = await telephony
-          .getInboxSms(sortOrder: [OrderBy(SmsColumn.DATE, sort: Sort.DESC)]);
+      final sms = await telephony.getInboxSms(
+        sortOrder: [
+          OrderBy(SmsColumn.DATE, sort: Sort.DESC),
+        ],
+      );
+
+// Banks you want to show
+      const banks = [
+        "GTBANK",
+        "ACCESS",
+        "UBA",
+        "FIRSTBANK",
+        "ZENITH",
+        "FIDELITY",
+        "FCMB",
+        "STERLING",
+        "WEMA",
+        "UNION",
+        "OPAY",
+        "PALMPAY",
+        "MONIEPOINT",
+        "ECOBANK",
+        "FIRSTCITY",
+        "KEYSTONE",
+        "POLARIS",
+        "STERLING",
+        "STANBIC",
+        "WEMA",
+        "UNITY",
+      ];
+
+// Keep only bank SMS
+      final bankSms = sms.where((e) {
+        final sender = (e.address ?? "").toUpperCase();
+
+        return banks.any((bank) => sender.contains(bank));
+      }).toList();
+
+// Remove duplicate senders
+      final Map<String, SmsMessage> uniqueMessages = {};
+
+      for (final sms in bankSms) {
+        final sender = sms.address ?? "";
+        uniqueMessages.putIfAbsent(sender, () => sms);
+      }
 
       setState(() {
-        message = sms;
+        message = uniqueMessages.values.toList();
       });
     }
   }
+
+  // Future<void> loadSms() async {
+  //   bool? granted = await telephony.requestPhoneAndSmsPermissions;
+
+  //   if (granted == true) {
+  //     final sms = await telephony
+  //         .getInboxSms(sortOrder: [OrderBy(SmsColumn.DATE, sort: Sort.DESC)]);
+
+  //     setState(() {
+  //       message = sms;
+  //     });
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -419,7 +475,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                                 builder: (_) => SmsChatScreen(
                                                     phone: sms.address ?? ''))),
                                         child: Container(
-                                          margin: const EdgeInsets.only(bottom: 10),
+                                          margin:
+                                              const EdgeInsets.only(bottom: 10),
                                           width: double.infinity,
                                           padding: const EdgeInsets.all(17.22),
                                           decoration: BoxDecoration(
@@ -512,8 +569,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                                     ],
                                                   ),
                                                   Text(
-                                                    DateFormat('dd MMM, yyyy').format(DateTime.fromMillisecondsSinceEpoch(
-                                                            sms.date ?? 0)),
+                                                    DateFormat('dd MMM, yyyy')
+                                                        .format(DateTime
+                                                            .fromMillisecondsSinceEpoch(
+                                                                sms.date ?? 0)),
                                                     style: const TextStyle(
                                                       color: AppColors.greyF,
                                                       fontWeight:

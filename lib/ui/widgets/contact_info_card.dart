@@ -14,8 +14,8 @@ class ContactInfoCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         border: Border.all(color: Colors.white.withOpacity(.08)),
       ),
-      child: Column(
-        children: const [
+      child: const Column(
+        children: [
           ContactTile(
             icon: Icons.location_on_outlined,
             iconColor: Color(0xff7B1FFF),
@@ -75,13 +75,13 @@ class ContactTile extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
          icon != null? Container(
-            padding: EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              color: const Color(0xff2A3441),
+            padding: const EdgeInsets.all(10),
+            decoration: const BoxDecoration(
+              color: Color(0xff2A3441),
               shape: BoxShape.circle,
             ),
             child: Icon(icon, color: iconColor, size: 24.0),
-          ):SizedBox.shrink(),
+          ):const SizedBox.shrink(),
           SizedBox(width: icon != null? 12:0),
           Expanded(
             child: Column(
@@ -90,7 +90,7 @@ class ContactTile extends StatelessWidget {
                 Text(
                   title,
                   style: TextStyle(
-                    color: Color(0xff8EA2B6),
+                    color: const Color(0xff8EA2B6),
                     fontSize: titleFontSize,
                     fontWeight: FontWeight.w600,
                     letterSpacing: 1,

@@ -15,8 +15,8 @@ class AppInfoCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         border: Border.all(color: Colors.white.withOpacity(.08)),
       ),
-      child: Column(
-        children: const [
+      child: const Column(
+        children: [
           AppTile(title: "App Version", value: "1.0.0 (Build 1)"),
           Divider(height: 1, color: Color(0xff36414C)),
           AppTile(title: "Platform", value: "Android 8.0+"),
@@ -45,7 +45,7 @@ class AppTile extends StatelessWidget {
         children: [
           Text(
             title,
-            style: TextStyle(
+            style: const TextStyle(
               color: Color(0xff8EA2B6),
               fontSize: 15.68,
               fontWeight: FontWeight.w600,
@@ -57,7 +57,7 @@ class AppTile extends StatelessWidget {
             child: Text(
               value,
               maxLines: 2,
-              style: TextStyle(
+              style: const TextStyle(
                 color: AppColors.white,
                 fontSize: 17.80,
                 fontWeight: FontWeight.w500,

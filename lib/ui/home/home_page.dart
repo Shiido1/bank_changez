@@ -41,13 +41,13 @@ class _MyHomePageState extends State<MyHomePage> {
             elevation: 3,
             selectedFontSize: 14.8,
             unselectedFontSize: 14.6,
-            selectedLabelStyle: TextStyle(
+            selectedLabelStyle: const TextStyle(
               fontWeight: FontWeight.w600,
               letterSpacing: 0,
               fontFamily: 'Arial',
               fontSize: 14.4,
             ),
-            unselectedLabelStyle: TextStyle(
+            unselectedLabelStyle: const TextStyle(
               fontWeight: FontWeight.w600,
               letterSpacing: 0,
               fontFamily: 'Arial',
@@ -56,8 +56,8 @@ class _MyHomePageState extends State<MyHomePage> {
             items: [
               BottomNavigationBarItem(
                 icon: Container(
-                  margin: EdgeInsets.only(top: 14),
-                  padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                  margin: const EdgeInsets.only(top: 14),
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                   decoration: BoxDecoration(
                     border: Border.all(
                       color: _currentIndex == 0
@@ -69,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         ? AppColors.purple
                         : AppColors.transparent,
                   ),
-                  child: Text(
+                  child: const Text(
                     'PRIVACY',
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
@@ -84,8 +84,8 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               BottomNavigationBarItem(
                 icon: Container(
-                  margin: EdgeInsets.only(top: 14),
-                  padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                  margin: const EdgeInsets.only(top: 14),
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                   decoration: BoxDecoration(
                     border: Border.all(
                       color: _currentIndex == 1
@@ -97,7 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         ? AppColors.purple
                         : AppColors.transparent,
                   ),
-                  child: Text(
+                  child: const Text(
                     'DASHBOARD',
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
@@ -112,8 +112,8 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               BottomNavigationBarItem(
                 icon: Container(
-                  margin: EdgeInsets.only(top: 14),
-                  padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                  margin: const EdgeInsets.only(top: 14),
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                   decoration: BoxDecoration(
                     border: Border.all(
                       color: _currentIndex == 2
@@ -125,7 +125,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         ? AppColors.purple
                         : AppColors.transparent,
                   ),
-                  child: Text(
+                  child: const Text(
                     'ABOUT',
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
