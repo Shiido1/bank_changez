@@ -1,9 +1,22 @@
+import 'dart:async';
+
 import 'package:bank_chargez/ui/utilities/color.dart';
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
+import 'over_charge_record_data.dart';
 import 'ui/home/home_page.dart';
 
-void main() {
+Future<void> main() async {
+   WidgetsFlutterBinding.ensureInitialized();
+
+  await Hive.initFlutter();
+
+  Hive.registerAdapter(OverChargeRecordDataAdapter());
+
+  await Hive.openBox<OverChargeRecordData>(
+    'overCharges',
+  );
   runApp(const MyApp());
 }
 

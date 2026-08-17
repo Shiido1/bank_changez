@@ -75,7 +75,7 @@ class UnlawfulOverchargeCard extends StatelessWidget {
                   "₦${formatter.format(amount)}",
                   style: const TextStyle(
                     color: Colors.white,
-                    fontSize: 42,
+                    fontSize: 37.88,
                     height: 1,
                     fontWeight: FontWeight.w700,
                   ),
@@ -83,9 +83,9 @@ class UnlawfulOverchargeCard extends StatelessWidget {
 
                 const SizedBox(height: 14),
 
-                const Text(
-                  "Total Unlawful Overcharges Detected • 18 transactions",
-                  style: TextStyle(
+                Text(
+                  "Total Unlawful Overcharges Detected • $flagged transactions",
+                  style: const TextStyle(
                     color: Color(0xff94A8C4),
                     fontSize: 16,
                     height: 1.4,
@@ -94,9 +94,7 @@ class UnlawfulOverchargeCard extends StatelessWidget {
               ],
             ),
           ),
-
           Divider(color: Colors.white.withOpacity(.12), height: 1),
-
           IntrinsicHeight(
             child: Row(
               children: [
